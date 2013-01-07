@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="genericCrud" extends="default" namespace="/">
+    
+    	<global-results>
+            <result name="search">/servicios/administracion/genericCrud/search.jsp</result>
+            <result name="list">/servicios/administracion/genericCrud/list.jsp</result>
+            <result name="read">/servicios/administracion/genericCrud/read.jsp</result>
+            <result name="update">/servicios/administracion/genericCrud/update.jsp</result>
+            <result name="create">/servicios/administracion/genericCrud/create.jsp</result>
+    	</global-results>
+    
+    </package>
+    
+</struts>
+    

@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="contactenos" extends="default" namespace="/servicios/contactenos">
+        
+        <action name="inicio" class="actionContactenos" method="inicio">
+            <result name="ok">/servicios/contactenos/formularioContactenos.jsp</result>
+        </action>
+        
+        <action name="enviarMensaje" class="actionContactenos" method="enviarMensaje">
+            <result name="input">/servicios/contactenos/formularioContactenos.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

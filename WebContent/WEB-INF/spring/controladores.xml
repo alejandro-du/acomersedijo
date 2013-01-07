@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="ctrlBanner"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlBanner"
+          scope="prototype" >
+        
+        <property name="directorioBanners" value="images/empresas/banners/" />
+        <property name="tipoAib" value="aib" />
+        <property name="tipoAii" value="aii" />
+        <property name="tipoAim" value="aim" />
+        <property name="tipoAsm" value="asm" />
+        <property name="tipoAdt" value="adt" />
+        
+        <property name="anchoAib" value="560" />
+        <property name="altoAib" value="75" />
+        <property name="anchoAii" value="560" />
+        <property name="altoAii" value="75" />
+        <property name="anchoAsm" value="196" />
+        <property name="altoAsm" value="131" />
+        <property name="anchoAdt" value="200" />
+        <property name="altoAdt" value="580" />
+        
+        <property name="numeroEmpresasBannerAim" value="5" />
+        
+    </bean>
+    
+    <bean name="ctrlArticulo"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlArticulo"
+          scope="prototype" />
+    
+    <bean name="ctrlCiudad"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlCiudad"
+          scope="prototype" />
+    
+    <bean name="ctrlComentario"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlComentario"
+          scope="prototype" />
+    
+    <bean name="ctrlEmpresa"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlEmpresa"
+          scope="prototype" >
+        
+        <property name="directorioImagenes" value="images/empresas/imagenes/" />
+        <property name="anchoImagen" value="96" />
+        <property name="altoImagen" value="64" />
+        
+    </bean>
+    
+    <bean name="ctrlEvento"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlEvento"
+          scope="prototype">
+        
+        <property name="diasLimiteProximosEventos" value="30" />
+        <property name="limiteProximosEventosPorEmpresa" value="1" />
+        
+    </bean>
+    
+    <bean name="ctrlGrupo"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlGrupo"
+          scope="prototype" />
+    
+    <bean name="ctrlIp"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlIp"
+          scope="prototype" />
+    
+    <bean name="ctrlMenu"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlMenu"
+          scope="prototype" />
+    
+    <bean name="ctrlPais"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlPais"
+          scope="prototype" />
+    
+    <bean name="ctrlPlan"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlPlan"
+          scope="prototype" >
+        
+        <property name="precioImagen" value="10000" />
+        <property name="precioLinkWebsite" value="5000" />
+        <property name="precioBannerAib" value="36000" />
+        <property name="precioBannerAii" value="72000" />
+        <property name="precioBannerAim" value="55200" />
+        <property name="precioBannerAsm" value="90000" />
+        <property name="precioBannerAdt" value="120000" />
+        <property name="precioEstrella1" value="15000" />
+        <property name="precioEstrella2" value="24000" />
+        <property name="precioEstrella3" value="36000" />
+        <property name="precioEstrella4" value="47500" />
+        <property name="precioEstrella5" value="66000" />
+        <property name="precioAnuncioBasico" value="12000" />
+        <property name="precioAnuncioAvanzado" value="30000" />
+        <property name="precioAnuncioEmpresarial" value="48000" />
+        <property name="caracteresHtmlBasico" value="3000" />
+        <property name="caracteresHtmlAvanzado" value="10000" />
+        <property name="caracteresHtmlEmpresarial" value="50000" />
+        
+    </bean>
+    
+    <bean name="ctrlRegistro"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlRegistro"
+          scope="prototype" >
+    
+    	<property name="textoMensajeConfirmacionRegistroGratis">
+    		<value>
+    			<![CDATA[
+	    			<h1>¡Bienvenido!</h1>
+                    Siguiendo el link que aparece a continuación llegará a un formulario
+                    para iniciar su sesión en <strong>¡A comer se dijo!</strong> Una vez
+                    introduzca sus datos, podrá iniciar la creación de su anuncio
+                    seleccionando la opción <strong>Editar anuncio</strong> ubicada en el
+                    menú <strong>Su cuenta</strong> en la parte izquierda de la página.
+                    <br/><br/>
+    			]]>
+    		</value>
+    	</property>
+
+    	<property name="textoMensajeConfirmacionRegistroPago">
+    		<value>
+    			<![CDATA[
+	    			<h1>¡Bienvenido!</h1>
+                    Siguiendo el link que aparece a continuación llegará a un formulario
+                    para iniciar su sesión en <strong>¡A comer se dijo!</strong> Una vez
+                    introduzca sus datos, podrá iniciar la creación de su anuncio
+                    seleccionando la opción <strong>Editar anuncio</strong> ubicada en el
+                    menú <strong>Su cuenta</strong> en la parte izquierda de la página.
+                    
+                    <h2>¿Cómo efectúo el pago?</h2>
+                    Para activar las características adicionales de su plan debe realizar el pago
+                    usando la opción <strong>Pagos</strong> ubicada en el menú
+                    <strong>Su cuenta</strong> en la parte izquierda de la página.
+                    Con esta opción podrá elegir entre 3 formas para realizar el pago:
+                    Efectivo (en nuestras oficinas), Consignación bancaria (en su banco o en el
+                    sitio web de su banco) o Vía Internet (por medio de
+                    <a href="http://www.mercadopago.com">www.mercadopago.com</a>). Ninguna forma de
+                    pago tiene cargos adicionales.
+                    
+					<br/><br/><strong>En efectivo:</strong>
+					Debe dirigirse a las oficinas de acomersedijo.com XXXXXXXX (Bogotá) y cancelar el total.
+					Personalmente registraremos su pago y activaremos las características adicionales de su plan.
+
+					<br/><br/><strong>Consignación bancaria:</strong>
+					Debe consignar el total en la cuenta No. XXXXX de Davivienda. Una vez halla realizado la
+					consignación, debe informarnos los detalles de la misma (documento del pagador, número de la
+					consignación y fecha) usando un formulario web que le será habilitado para tal efecto.
+
+					<br/><br/><strong>Vía Internet:</strong>
+					Para realizar el pago vía Internet, usted será redireccionado al sitio web
+					<a href="http://www.mercadopago.com">www.mercadopago.com</a> donde podrá pagar con tarjeta de
+					crédito u otras opciones. El servicio es gratuito, no se cobrará ningún cargo extra.
+
+                    <br/><br/>
+                    Al realizar el pago, asegúrese de transferir el monto correcto (indicado a
+                    continuación).
+					Si encuentra alguna irregularidad en la información de este email,
+					por favor comuníquese con nosotros.
+                    
+                    <br/><br/>
+                    La activación de las características adicionales puede tomar hasta 5 días
+                    hábiles después de notificado el pago.
+                    
+                    <br/><br/>
+                    <i>Recuerde que aún cuando no haya realizado el pago de las características
+                    adicionales de su plan, puede emprezar a crear su anuncio.</i>
+    			]]>
+    		</value>
+    	</property>
+
+    </bean>
+    
+    <bean name="ctrlReporte"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlReporte"
+          scope="prototype" />
+    
+    <bean name="ctrlSeccion"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlSeccion"
+          scope="prototype" />
+    
+    <bean name="ctrlSector"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlSector"
+          scope="prototype" />
+    
+    <bean name="ctrlServicio"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlServicio"
+          scope="prototype" />
+    
+    <bean name="ctrlUsuario"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlUsuario"
+          scope="prototype" >
+	
+		<property name="mensajeReestablecerPassword">
+			<value>
+    			<![CDATA[
+					<h1>Su contraseña de ingreso</h1>
+					Usted ha solicitado reestablecer su contrase&ntilde;a de ingreso a <strong>&iexcl;A comer se dijo!</strong>.<br/><br/>
+    			]]>
+			</value>
+		</property>
+	</bean>
+    
+    <bean name="ctrlZona"
+          class="dpasoftware.acomersedijo.biz.controlador.impl.CtrlZona"
+          scope="prototype" />
+    
+</beans>

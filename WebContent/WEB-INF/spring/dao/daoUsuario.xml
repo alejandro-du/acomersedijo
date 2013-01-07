@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="daoUsuario"
+          class="dpasoftware.acomersedijo.accesoDatos.dao.impl.DaoUsuario"
+          scope="prototype">
+        
+        <property name="listar">
+            <value>
+                
+                SELECT u
+                
+                FROM Usuario u
+                
+                WHERE
+                        u.nombre1 LIKE ?1
+                    AND u.nombre2 LIKE ?2
+                    AND u.apellido1 LIKE ?3
+                    AND u.apellido2 LIKE ?4
+                    AND u.email LIKE ?5
+                    
+            </value>
+        </property>
+        
+        <property name="obtenerPorEmail">
+            <value>
+                SELECT u FROM Usuario u WHERE u.email = ?1
+            </value>
+        </property>
+        
+        <property name="obtenerActivoPorEmailYPassword">
+            <value>
+                
+                SELECT u
+                
+                FROM Usuario u
+                
+                WHERE
+                        u.activo = TRUE
+                    AND u.email = ?1
+                    AND u.password = ?2
+                    
+            </value>
+        </property>
+        
+    </bean>
+    
+</beans>

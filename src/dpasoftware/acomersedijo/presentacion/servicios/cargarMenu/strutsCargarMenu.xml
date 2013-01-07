@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="cargarMenu" extends="default" namespace="/servicios/cargarMenu">
+        
+        <action name="inicio" class="actionCargarMenu" method="inicio">
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="eventos" extends="default" namespace="/servicios/eventos">
+        
+        <action name="verEvento" class="actionEventos" method="verEvento">
+            <result name="ok">/servicios/eventos/verEvento.jsp</result>
+        </action>
+        
+        <action name="comentarEvento" class="actionEventos" method="comentarEvento">
+            <result name="input">/servicios/eventos/verEvento.jsp</result>
+        </action>
+        
+        <action name="verEventos" class="actionEventos" method="verEventos">
+            <result name="ok">/servicios/eventos/verEventos.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

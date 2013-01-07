@@ -1,0 +1,559 @@
+/* 
+Author     : Alejandro.
+Description: Estilos globales.
+*/
+
+
+/*
+--------------------------------------------------------------------------------
+    Estilos
+--------------------------------------------------------------------------------
+*/
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+    margin: 20px;
+    padding: 0;
+    background: #FFFFFF;
+    font: normal .9em Tahoma, Arial, Helvetica, sans-serif;
+    color: #5D413A;
+    text-align:center;
+    background-color: #f3f3f3;
+}
+
+/* Wrapper */
+
+#wrapperWelcome {
+    width: 796px;
+    border: 1px solid #bbb;
+    text-align: center;
+    background-color: #ffffff;
+    margin: 0 auto;
+    vertical-align: center;
+    background: url(../images/fondo1.jpg);
+}
+
+
+#wrapperWelcomeCities a {
+	margin: 0px 320px 0px 320px;
+    text-decoration: none;
+    font-weight: normal;
+    font-stretch: expanded;
+    display:block;
+    color: #444;
+}
+
+#wrapperWelcomeCities a:hover {
+	color: #fff;
+    font-weight: bold;
+    background-color: #98A24D;
+}
+
+
+#wrapper {
+    width: 796px;
+    border: 1px solid #bbb;
+    text-align:left;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+
+#wrapper table {
+    border-collapse: collapse;
+    margin: 0px;
+    font-family: "Tahoma";
+    font-size: 13px;
+}
+
+#wrapper td {
+    vertical-align: top;
+}
+
+
+
+/* Header */
+
+#header {
+    float: left;
+    width: 198px;
+    height: 148px;
+    background: url(../images/img1.jpg);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#header table th {
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#header h1 {
+    margin: 0;
+    padding: 18px 0 5px 0;
+    text-align: center;
+    letter-spacing: -1px;
+    font-size: 2.8em;
+}
+
+#header h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+#header a {
+    text-decoration: none;
+    color: #BD4F21;
+}
+
+
+
+/* Pages */
+
+#pages {
+    float: right;
+    height: 148px;
+    margin-left: 8px;
+    margin-right: 11px;
+    margin-top: 10px;
+    background: url(../images/img2.jpg);
+}
+
+#pages table {
+    margin: 0px;
+    height: 148px;
+    width: 566px;
+    text-align: right;
+}
+
+#pages table td {
+    padding-bottom: 7px;
+    padding-right: 6px;
+    vertical-align: bottom;
+}
+
+#pages a {
+    text-decoration: none;
+    font: 16px Arial, Tahoma, Arial, Helvetica;
+    color: #FFFFFF;
+    border: solid 1px transparent;
+    padding-left: 30px;
+    padding-right: 5px;
+}
+
+#pages a:hover {
+    /*text-decoration: underline;*/
+    background: url(../images/img4b.gif) no-repeat 14px center;
+    background-color: #939A3C;
+    border: 1px solid #bbb;
+}
+
+
+
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #BD4F21;
+}
+
+h3 {
+    margin: 0;
+    font-size: 17px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #BD4F21;
+}
+
+p, blockquote, ol, ul {
+    line-height: 120%;
+}
+
+a {
+    color: #7C8634;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #BD4F21;
+}
+
+
+
+/* Boxed */
+
+.boxed {
+    width: 196px;
+    margin: 8px 10px 10px 10px;
+    padding: 0;
+    background: url(../images/fondoformulario.png) #E0E3C9;
+    background-repeat: no-repeat;
+    /*background: #E0E3C9;*/
+    border: 1px solid #bbb;
+}
+
+.boxed .heading {
+    margin: 4px;
+    padding: 8px 10px;
+    background: #98A24D url(../images/img3.gif) no-repeat center bottom;
+    border-top: 1px solid #737947;
+    border-bottom: 1px solid #F4F5EC;
+    font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.boxed .content {
+    padding: 5px 14px 10px 14px;
+}
+
+.boxed ul {
+    display:block;
+    margin: 0px;
+    padding: 1px;
+    list-style: none;
+    line-height: normal;
+}
+
+.boxed li {
+    font: normal .9em Tahoma, Arial, Helvetica, sans-serif;
+    padding: 0 1px 0 1px;
+    border-top: 1px dotted #939A3C;
+    list-style-type:none;
+    overflow:auto;
+}
+
+.boxed li.first {
+    display:block;
+    border: none;
+}
+
+.boxed a {
+    display:block;
+    line-height:20px;	/* Height of menu links */
+    padding-left: 10px;
+    background: url(../images/img4.gif) no-repeat left center;
+    text-decoration: none;
+}
+
+.boxed a:hover {
+    background: url(../images/fondomenuhover.png) center;
+    background-color:#BD4F21;
+    color: #ffffff;
+}
+
+/* Content */
+
+#content {
+    width: 562px;
+}
+
+
+
+
+
+/* Posts */
+
+#posts {
+    float: right;
+    width: 566px;
+}
+
+.post {
+    padding-top: 2px;
+}
+
+.post .title {
+	margin: 0;
+}
+
+.title a {
+	text-decoration: none;
+    color: #BD4F21;
+    display:block;
+}
+
+.title a:hover {
+    background-color: #f5f5f5;
+}
+
+.post .posted {
+    margin-top: 0;
+    font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+    color: #999999;
+}
+
+.post .meta {
+    margin: 1em 0 1em 0;
+    border-top: 1px dotted #939A3C;
+    font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+    color: #999999;
+}
+
+.post .meta p {
+    margin: 0;
+}
+
+/* Archives */
+
+#archives {
+    float: right;
+    margin-right: 10px;
+}
+
+
+
+/* Footer */
+
+#footer {
+    
+    clear: both;
+    font: normal .7em Tahoma, Arial, Helvetica, sans-serif;
+    color: #404040;
+    background-color: #daddda;
+    padding-left:10px;
+    padding-right:10px;
+    margin: 0px;
+    border-top: 1px solid #bbb;
+    text-align:center;
+}
+
+#footer a {
+    color: #556555;
+}
+
+#footer a:hover {
+    color: #111;
+}
+
+
+
+
+
+
+
+
+/*
+--------------------------------------------------------------------------------
+    Tablas y formularios
+--------------------------------------------------------------------------------
+*/
+
+table.empresa {
+    font: normal 14px Tahoma, Arial, Helvetica, sans-serif;
+    color: #5D413A;
+    border: 1px solid #939A3C;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 100%;
+}
+
+table.empresa td {
+    border: 1px solid #bbb;
+    padding: 10px;
+}
+
+
+
+table.datosEmpresa {
+    width: 100%;
+}
+
+table.datosEmpresa td {
+    border: 0px solid;
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
+}
+
+
+
+
+
+.errorMessage, .required {
+    font-family: "Arial Narrow", "Myriad Pro";
+    font-size: 10pt;
+    color: #e24012;
+}
+
+input, select, textarea {
+    border: 1px solid #bbb;
+}
+
+input:focus, select:focus, textarea:focus {
+    background: #fcfee7;
+}
+
+input:hover, select:hover, textarea:hover {
+    border: 1px solid #5D413A;
+}
+
+.nota {
+    font-family: "Arial Narrow", "Myriad Pro";
+    font-size: 10pt;
+    border: 1px dotted #5D413A;
+    background: url(../images/fondonota.png) #f0f3C9;
+    background-repeat: no-repeat;
+    color: #BD4F21;
+    padding: 5px;
+    
+}
+
+
+.tdLabel {
+	text-align: right;
+}
+
+table.ram {
+    border: 1px solid #bbb;
+    font: normal 14px Tahoma, Arial, Helvetica, sans-serif;
+    color: #5D413A;
+    background: url(../images/fondoformulario.png) #E0E3C9;
+    background-repeat: no-repeat;
+}
+
+table.ram td {
+    margin: 0px;
+    padding: 5px 12px 5px 12px;
+    
+}
+
+
+#pdf {
+    background: url(../images/pdf_icon.png) no-repeat left center;
+    padding-left: 20px;
+    padding-right: 3px;
+}
+
+#xml {
+    background: url(../images/xml_icon.png) no-repeat left center;
+    padding-left: 20px;
+    padding-right: 3px;
+}
+
+#excel {
+    background: url(../images/excel_icon.png) no-repeat left center;
+    padding-left: 20px;
+    padding-right: 3px;
+}
+
+
+
+
+
+.imagenEmpresa img {
+   margin: 5px 0px 0px 0px;
+   padding: 0px;
+   border: 1px solid #bbb;
+}
+
+.imagenEmpresa img:hover {
+   border: 1px solid #BD4F21;
+}
+
+
+
+
+
+
+table.formularioComentario {
+    border: 1px solid #bbb;
+    font: normal 14px Tahoma, Arial, Helvetica, sans-serif;
+    color: #404040;
+    background: url(../images/fondonota.png) #f0f3C9;
+    background-repeat: no-repeat;
+}
+
+table.formularioComentario td {
+    margin: 0px;
+    padding: 2px 8px 2px 8px;
+}
+
+
+
+
+
+.aim {
+    width: 180px;
+    margin: 8px 10px 10px 10px;
+    padding: 8px;
+    border: 1px solid #bbb;
+}
+
+.aim a {
+    color: #444;
+}
+
+
+
+
+
+
+.eventos {
+    
+    margin: 20px;
+    padding: 8px;
+    font: normal 0.85em Tahoma, Arial, Helvetica, sans-serif;
+    color: #222;
+    text-align:left;
+    background-color: #f5f5f5;
+    border: solid 2px #eeb;
+    margin: 0px;
+}
+
+.eventos h2 {
+    font: bold 2em "Georgia";
+    color: #b60;
+    padding: 0px;
+    margin: 0px;
+}
+
+.eventos h3 {
+    font: bold 1.4em Helvetica, sans-serif;
+    color: #9C8634;
+    padding: 0px;
+    margin-bottom: 5px;
+    display:block;
+}
+
+.eventos a {
+    color: #9C8634;
+    border: solid 0px;
+    background-color: #f5f5f5;
+}
+
+.eventos a:hover {
+    color: #939A3C;
+}
+
+.evento {
+    border-bottom: solid 1px #fff;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+.anunciosGoogleMenu {
+    margin: 8px 10px 10px 10px;
+    padding: 10px 0px 0px 35px;
+    background: url(../images/fondoformulario.png) #E0E3C9;
+    background-repeat: no-repeat;
+    border: 1px solid #bbb;
+}
+

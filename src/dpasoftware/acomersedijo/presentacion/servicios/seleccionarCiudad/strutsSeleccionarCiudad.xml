@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="seleccionarCiudad" extends="default" namespace="/servicios/seleccionarCiudad">
+        
+        <action name="inicio" class="actionSeleccionarCiudad" method="inicio">
+            <result name="ok">/servicios/seleccionarCiudad/seleccionarCiudad.jsp</result>
+        </action>
+        
+        <action name="seleccionarCiudad" class="actionSeleccionarCiudad" method="seleccionarCiudad">
+            <result name="input">/servicios/seleccionarCiudad/seleccionarCiudad.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

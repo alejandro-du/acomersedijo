@@ -1,0 +1,92 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <!-- Archivos XML a incluir. Archivos de definición de actions -->
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/actualizarDatos/strutsActualizarDatos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/articulo/strutsAdministrarArticulos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/ciudad/strutsAdministrarCiudades.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/denegarPago/strutsDenegarPago.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/comentario/strutsAdministrarComentarios.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/empresa/strutsAdministrarEmpresas.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/evento/strutsAdministrarEventos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/genericCrud/strutsGenericCrud.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/grupo/strutsAdministrarGrupos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/ip/strutsAdministrarIps.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/menu/strutsAdministrarMenus.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/pais/strutsAdministrarPaises.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/plan/strutsAdministrarPlanes.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/registrarPago/strutsRegistrarPago.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/reporte/strutsAdministrarReportes.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/seccion/strutsAdministrarSecciones.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/sector/strutsAdministrarSectores.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/servicio/strutsAdministrarServicios.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/usuario/strutsAdministrarUsuarios.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/administracion/zona/strutsAdministrarZonas.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/articulos/strutsArticulos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/autenticacion/strutsAutenticacion.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/cargarMenu/strutsCargarMenu.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/cerrarSesion/strutsCerrarSesion.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/contactenos/strutsContactenos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/editarAnuncio/strutsEditarAnuncio.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/empresas/strutsEmpresas.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/eventos/strutsEventos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/inicio/strutsInicio.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/pagos/strutsPagos.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/publicarBanners/strutsPublicarBanners.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/publicarEvento/strutsPublicarEvento.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/reestablecerPassword/strutsReestablecerPassword.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/reportes/strutsReportes.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/registrarse/strutsRegistrarse.xml" />
+    <include file="dpasoftware/acomersedijo/presentacion/servicios/seleccionarCiudad/strutsSeleccionarCiudad.xml" />
+    
+    <!-- Paquete "base" -->
+    <package name="default" extends="struts-default" namespace="/">
+        
+        <interceptors>
+            
+            <interceptor-stack name="interceptorStack">
+                
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="debugging"/>
+                <interceptor-ref name="params" />
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="basicStack"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">inicio</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow"/>
+                <interceptor-ref name="autowiring" />
+                
+            </interceptor-stack>
+            
+        </interceptors>
+        
+        <default-interceptor-ref name="interceptorStack" />
+        
+        
+        <global-results>
+            
+            <!-- entrada a la aplicación -->
+            <result name="index">
+                /
+            </result>
+            
+            <!-- muestra un mensaje estándar -->
+            <result name="mensaje">
+                /comun/mensaje.jsp
+            </result>
+            
+            <!-- muestra mensaje de error -->
+            <result name="error">
+                /comun/error.jsp
+            </result>
+            
+        </global-results>
+
+    </package>
+    
+
+</struts>

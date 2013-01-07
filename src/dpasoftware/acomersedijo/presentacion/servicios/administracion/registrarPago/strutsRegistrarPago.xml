@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="registrarPago" extends="default" namespace="/servicios/administracion/registrarPago">
+        
+        <action name="inicio" class="actionRegistrarPago" method="inicio">
+            <result name="input">/servicios/administracion/registrarPago/formularioRegistrarPago.jsp</result>
+        </action>
+        
+        <action name="registrarPago" class="actionRegistrarPago" method="registrarPago">
+            <result name="input">/servicios/administracion/registrarPago/formularioRegistrarPago.jsp</result>
+            <result name="datosEmpresa">/servicios/administracion/registrarPago/datosEmpresa.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

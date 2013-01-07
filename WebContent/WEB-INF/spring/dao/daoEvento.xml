@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="daoEvento"
+          class="dpasoftware.acomersedijo.accesoDatos.dao.impl.DaoEvento"
+          scope="prototype">
+        
+        <property name="listar">
+            <value>
+                
+                SELECT e
+                
+                FROM Evento e
+                
+                WHERE
+                        e.titulo LIKE ?1
+                    AND e.fecha LIKE ?2
+                    AND e.hora LIKE ?3
+                    AND e.precio LIKE ?4
+                    AND e.descripcion LIKE ?5
+                    AND e.informes LIKE ?6
+                    AND e.lugar LIKE ?7
+                    
+            </value>
+        </property>
+    
+        <property name="listarEnPeriodo">
+            <value>
+                
+                SELECT e
+                
+                FROM Evento e
+                
+                WHERE
+                    e.zona.ciudad.id = ?1
+                    AND e.fecha &gt;= ?2
+                    AND e.fecha &lt;= ?3
+                    AND e.empresa.activa = TRUE
+                
+                ORDER BY e.fecha
+                
+            </value>
+        </property>
+    
+        <property name="listarEnPeriodoPorEmpresaId">
+            <value>
+                
+                SELECT e
+                
+                FROM Evento e
+                
+                WHERE
+                    e.empresa.id = ?1
+                    AND e.fecha &gt;= ?2
+                    AND e.fecha &lt;= ?3
+                    AND e.empresa.activa = TRUE
+                
+                ORDER BY e.fecha
+                
+            </value>
+        </property>
+    
+        <property name="listarPorSectorId">
+            <value>
+                SELECT e FROM Evento e WHERE e.empresa.sector.id = ?1 ORDER BY e.fecha DESC
+            </value>
+        </property>
+    
+        <property name="listarPorEmpresaId">
+            <value>
+                SELECT e FROM Evento e WHERE e.empresa.id = ?1 ORDER BY e.fecha DESC
+            </value>
+        </property>
+        
+    </bean>
+    
+</beans>

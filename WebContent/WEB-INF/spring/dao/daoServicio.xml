@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="daoServicio"
+          class="dpasoftware.acomersedijo.accesoDatos.dao.impl.DaoServicio"
+          scope="prototype">
+        
+        <property name="obtenerPorNombre">
+            <value>
+                SELECT s FROM Servicio s WHERE s.nombre = ?1
+            </value>
+        </property>
+        
+        <property name="obtenerPorUrl">
+            <value>
+                SELECT s FROM Servicio s WHERE s.url = ?1
+            </value>
+        </property>
+        
+        <property name="listar">
+            <value>
+                
+                SELECT s
+                
+                FROM Servicio s
+                
+                WHERE
+                        s.nombre LIKE ?1
+                    AND s.url LIKE ?2
+                    
+            </value>
+        </property>
+        
+        <property name="listarPorGrupoId">
+            <value>
+                
+                SELECT s
+                
+                FROM
+                    Servicio s
+                    JOIN Grupo g
+                    
+                WHERE g.id = ?1
+                
+            </value>
+        </property>
+        
+        <property name="listarPorMenu">
+            <value>
+                SELECT s FROM Servicio s WHERE s.menu = ?1
+            </value>
+        </property>
+        
+        <property name="listarPublicos">
+            <value>
+                SELECT s FROM Servicio s WHERE s.publico = TRUE
+            </value>
+        </property>
+        
+    </bean>
+    
+</beans>

@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="inicio" extends="default" namespace="/servicios/inicio">
+        
+        <action name="inicio" class="actionInicio" method="inicio">
+            <result name="seleccionar ciudad">/servicios/seleccionarCiudad/index.jsp</result>
+            <result name="ok">/servicios/inicio/inicio.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

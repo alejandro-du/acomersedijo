@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="daoEmpresa"
+          class="dpasoftware.acomersedijo.accesoDatos.dao.impl.DaoEmpresa"
+          scope="prototype" >
+
+        <property name="listar">
+            <value>
+
+                SELECT e
+                    
+                FROM Empresa e
+
+                WHERE
+                    e.nombre LIKE ?1
+                    AND e.telefono LIKE ?2
+                    AND e.direccion LIKE ?3
+                    AND (?4 = '%%' OR e.email LIKE ?4)
+                    AND (?5 = '%%' OR e.website LIKE ?5)
+
+                ORDER BY
+                    e.plan.estrellas DESC,
+                    e.plan.fechaConfirmacionRegistro,
+                    e.visitas DESC
+
+            </value>
+        </property>
+        
+        <property name="listarPorCiudadIdYSectorId">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.sector.id = ?2
+                
+                ORDER BY
+                    e.plan.estrellas DESC,
+                    e.plan.fechaConfirmacionRegistro,
+                    e.visitas DESC
+                
+            </value>
+        </property>
+
+        <property name="obtenerPorUsuarioId">
+            <value>
+                SELECT e FROM Empresa e WHERE e.usuario.id = ?1
+            </value>
+        </property>
+
+        <property name="buscarActivasPorCiudadId">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND (
+                        e.nombre LIKE ?2
+                        OR e.telefono LIKE ?2
+                        OR e.direccion LIKE ?2
+                        OR e.email LIKE ?2
+                        OR e.website LIKE ?2
+                        OR e.anuncio LIKE ?2
+                        OR e.sector.nombre LIKE ?2
+                        OR e.zona.nombre LIKE ?2
+                        OR e.zona.ciudad.nombre LIKE ?2
+                        OR e.zona.ciudad.pais.nombre LIKE ?2
+                    )
+                         
+                ORDER BY
+                    e.plan.estrellas DESC,
+                    e.plan.fechaConfirmacionRegistro,
+                    e.visitas DESC
+                    
+            </value>
+        </property>
+
+        <property name="listarActivasTop">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.zona.ciudad.id = ?1
+                    AND e.activa = TRUE
+                    AND e.nombre IS NOT NULL
+                    
+                ORDER BY
+                    e.visitas DESC,
+                    e.plan.estrellas DESC,
+                    e.plan.fechaConfirmacionRegistro
+                    
+            </value>
+        </property>
+
+        <property name="buscarActivasPorTodos">
+            <value>
+            
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.nombre LIKE ?1
+                    AND e.telefono LIKE ?2
+                    AND e.direccion LIKE ?3
+                    AND (?4 = '%%' OR e.email LIKE ?4)
+                    AND (?5 = '%%' OR e.website LIKE ?5)
+                    AND (?6 = '%%' OR e.anuncio LIKE ?6)
+                    AND (?7 IS NULL OR e.sector.id = ?7)
+                    AND (?8 IS NULL OR e.zona.id = ?8)
+                    AND (?9 IS NULL OR e.zona.ciudad.id = ?9)
+                    
+                ORDER BY
+                    e.plan.estrellas DESC,
+                    e.plan.fechaConfirmacionRegistro,
+                    e.visitas DESC
+                
+            </value>
+        </property>
+
+        <property name="obtenerRegistradaPorEmailUsuario">
+            <value>
+                SELECT e FROM Empresa e WHERE e.usuario.email = ?1 and e.plan.fechaConfirmacionRegistro IS NOT NULL
+            </value>
+        </property>
+
+        <property name="obtenerNoRegistradaPorEmailUsuario">
+            <value>
+                SELECT e FROM Empresa e WHERE e.usuario.email = ?1 and e.plan.fechaConfirmacionRegistro IS NULL
+            </value>
+        </property>
+
+        <property name="listarEmpresasAim">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.plan.bannerAim = TRUE
+                    AND e.plan.fechaPago IS NOT NULL
+                    AND e.plan.fechaPago &lt;&gt; ""
+                    
+            </value>
+        </property>
+
+        <property name="listarEmpresasAsm">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.plan.bannerAsm = TRUE
+                    
+            </value>
+        </property>
+
+        <property name="listarEmpresasAii">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.plan.bannerAii = TRUE
+                    
+            </value>
+        </property>
+
+        <property name="listarEmpresasAdt">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.plan.bannerAdt = TRUE
+                    
+            </value>
+        </property>
+
+        <property name="listarEmpresasAib">
+            <value>
+                
+                SELECT e
+                
+                FROM Empresa e
+                
+                WHERE
+                    e.activa = TRUE
+                    AND e.zona.ciudad.id = ?1
+                    AND e.plan.bannerAib = TRUE
+                    
+            </value>
+        </property>
+
+    </bean>
+    
+</beans>

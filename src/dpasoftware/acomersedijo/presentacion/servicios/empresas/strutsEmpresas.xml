@@ -1,0 +1,39 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="empresas" extends="default" namespace="/servicios/empresas">
+        
+        <action name="verSector" class="actionEmpresas" method="verSector">
+            <result name="ok">/servicios/empresas/verSector.jsp</result>
+        </action>
+        
+        <action name="verEmpresa" class="actionEmpresas" method="verEmpresa">
+            <result name="ok">/servicios/empresas/verEmpresa.jsp</result>
+        </action>
+        
+        <action name="buscar" class="actionEmpresas" method="buscar">
+            <result name="ok">/servicios/empresas/resultadosBusqueda.jsp</result>
+        </action>
+        
+        <action name="busquedaAvanzada" class="actionEmpresas" method="busquedaAvanzada">
+            <result name="ok">/servicios/empresas/formularioBusquedaAvanzada.jsp</result>
+        </action>
+        
+        <action name="realizarBusquedaAvanzada" class="actionEmpresas" method="realizarBusquedaAvanzada">
+            <result name="ok">/servicios/empresas/resultadosBusquedaAvanzada.jsp</result>
+        </action>
+        
+        <action name="comentarSector" class="actionEmpresas" method="comentarSector">
+            <result name="input">/servicios/empresas/verSector.jsp</result>
+        </action>
+        
+        <action name="comentarEmpresa" class="actionEmpresas" method="comentarEmpresa">
+            <result name="input">/servicios/empresas/verEmpresa.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+    
+    <bean name="jpaPropertyMap" class="java.util.TreeMap">
+        <constructor-arg>
+            <map>
+                <entry key="toplink.jdbc.url">
+                    <value>${database.url}</value>
+                </entry>
+                <entry key="toplink.jdbc.user">
+                    <value>${database.user}</value>
+                </entry>
+                <entry key="toplink.jdbc.password">
+                    <value>${database.password}</value>
+                </entry>
+                <entry key="toplink.jdbc.driver">
+                    <value>${database.driver}</value>
+                </entry>
+                <entry key="toplink.ddl-generation">
+                    <value>${database.ddl-generation}</value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="acomersedijoPU" />
+        <property name="jpaPropertyMap" ref="jpaPropertyMap" />
+    </bean>
+    
+    <import resource="daoArticulo.xml" />
+    <import resource="daoCiudad.xml" />
+    <import resource="daoComentario.xml" />
+    <import resource="daoEmpresa.xml" />
+    <import resource="daoEvento.xml" />
+    <import resource="daoGrupo.xml" />
+    <import resource="daoIp.xml" />
+    <import resource="daoMenu.xml" />
+    <import resource="daoPais.xml" />
+    <import resource="daoPlan.xml" />
+    <import resource="daoReporte.xml" />
+    <import resource="daoSeccion.xml" />
+    <import resource="daoSector.xml" />
+    <import resource="daoServicio.xml" />
+    <import resource="daoUsuario.xml" />
+    <import resource="daoZona.xml" />
+    
+</beans>

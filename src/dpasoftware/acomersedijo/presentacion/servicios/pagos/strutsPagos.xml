@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="pagos" extends="default" namespace="/servicios/pagos">
+        
+        <action name="inicio" class="actionPagos" method="inicio">
+            <result name="input">/servicios/pagos/seleccionarFormaPago.jsp</result>
+        </action>
+        
+        <action name="notificarPago" class="actionPagos" method="notificarPago">
+            <result name="input">/servicios/pagos/notificarPago.jsp</result>
+        </action>
+        
+        <action name="inicioNotificarPago" class="actionPagos" method="inicioNotificarPago">
+            <result name="input">/servicios/pagos/notificarPago.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

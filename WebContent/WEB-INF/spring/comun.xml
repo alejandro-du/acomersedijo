@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+
+    <!-- Bean para el manejo de objetos de sesión de usuario -->
+    <bean name="sesion" class="dpasoftware.acomersedijo.presentacion.comun.impl.Sesion" />
+    
+    <!-- Bean para el manejo del menú -->
+    <bean name="menuDeUsuario" class="dpasoftware.acomersedijo.presentacion.comun.impl.MenuDeUsuario" />
+    
+    <bean name="mailSender" class="dpasoftware.acomersedijo.biz.comun.impl.MailSender">
+        
+        <property name="gmailHost">
+            <value>smtp.gmail.com</value>
+        </property>
+        
+        <property name="gmailPort">
+            <value>465</value>
+        </property>
+        
+        <property name="gmailUsername">
+            <value>???</value>
+        </property>
+        
+        <property name="gmailPassword">
+            <value>???</value>
+        </property>
+        
+        <property name="gmailAdress">
+            <value>???</value>
+        </property>
+        
+    </bean>
+    
+    <!-- Id's de filas especiales en la BD -->
+    <bean name="bdId" class="dpasoftware.acomersedijo.accesoDatos.comun.impl.BdId">
+        
+        <property name="idUsuarioAdministrador">
+            <value>100</value>
+        </property>
+        
+        <property name="idGrupoUsuariosAutenticados">
+            <value>101</value>
+        </property>
+        
+        <property name="idGrupoAnunciantes">
+            <value>102</value>
+        </property>
+        
+        <property name="nombreSeccionIndex1">
+            <value>Index 1</value>
+        </property>
+        
+        <property name="nombreSeccionIndex2">
+            <value>Index 2</value>
+        </property>
+        
+        <property name="nombreSeccionIndex3">
+            <value>Index 3</value>
+        </property>
+        
+    </bean>
+    
+    <bean name="imageUploader" class="dpasoftware.acomersedijo.biz.comun.impl.ImageUploader" />
+    
+    <bean name="contentValidator" class="dpasoftware.acomersedijo.biz.comun.impl.ContentValidator">
+        
+        <property name="palabrasNoPermitidas">
+            <list>
+                <value>puta</value>
+                <value>marica</value>
+            </list>
+        </property>
+        
+    </bean>
+
+</beans>

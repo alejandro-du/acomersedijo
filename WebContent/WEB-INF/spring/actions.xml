@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-autowire="byName"
+>
+    
+    <bean name="actionActualizarDatos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.actualizarDatos.ActionActualizarDatos"
+          scope="prototype" />
+
+    <bean name="actionAdministrarArticulos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.articulo.ActionAdministrarArticulos"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarCiudades"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.ciudad.ActionAdministrarCiudades"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarComentarios"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.comentario.ActionAdministrarComentarios"
+          scope="prototype" />
+    
+    <bean name="actionDenegarPago"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.denegarPago.ActionDenegarPago"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarEmpresas"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.empresa.ActionAdministrarEmpresas"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarEventos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.evento.ActionAdministrarEventos"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarGrupos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.grupo.ActionAdministrarGrupos"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarIps"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.ip.ActionAdministrarIps"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarMenus"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.menu.ActionAdministrarMenus"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarPaises"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.pais.ActionAdministrarPaises"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarPlanes"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.plan.ActionAdministrarPlanes"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarReportes"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.reporte.ActionAdministrarReportes"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarSecciones"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.seccion.ActionAdministrarSecciones"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarSectores"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.sector.ActionAdministrarSectores"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarServicios"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.servicio.ActionAdministrarServicios"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarUsuarios"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.usuario.ActionAdministrarUsuarios"
+          scope="prototype" />
+    
+    <bean name="actionAdministrarZonas"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.zona.ActionAdministrarZonas"
+          scope="prototype" />
+    
+    <bean name="actionArticulos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.articulos.ActionArticulos"
+          scope="prototype" />
+    
+    <bean name="actionAutenticar"
+          class="dpasoftware.acomersedijo.presentacion.servicios.autenticacion.ActionAutenticacion"
+          scope="prototype" />
+    
+    <bean name="actionCargarMenu"
+          class="dpasoftware.acomersedijo.presentacion.servicios.cargarMenu.ActionCargarMenu"
+          scope="prototype" />
+
+    <bean name="actionCerrarSesion"
+          class="dpasoftware.acomersedijo.presentacion.servicios.cerrarSesion.ActionCerrarSesion"
+          scope="prototype" />
+    
+    <bean name="actionContactenos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.contactenos.ActionContactenos"
+          scope="prototype" />
+
+    <bean name="actionEditarAnuncio"
+          class="dpasoftware.acomersedijo.presentacion.servicios.editarAnuncio.ActionEditarAnuncio"
+          scope="prototype" />
+
+    <bean name="actionEmpresas"
+          class="dpasoftware.acomersedijo.presentacion.servicios.empresas.ActionEmpresas"
+          scope="prototype" />
+
+    <bean name="actionEventos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.eventos.ActionEventos"
+          scope="prototype" />
+
+    <bean name="actionInicio"
+          class="dpasoftware.acomersedijo.presentacion.servicios.inicio.ActionInicio"
+          scope="prototype">
+
+        <property name="maximoProximosEventos" value="7" />
+        <property name="maxLongitudDescripcionEvento" value="150" />
+        
+    </bean>
+
+    <bean name="actionPagos"
+          class="dpasoftware.acomersedijo.presentacion.servicios.pagos.ActionPagos"
+          scope="prototype" />
+
+    <bean name="actionPublicarBanners"
+          class="dpasoftware.acomersedijo.presentacion.servicios.publicarBanners.ActionPublicarBanners"
+          scope="prototype" />
+    
+    <bean name="actionPublicarEvento"
+          class="dpasoftware.acomersedijo.presentacion.servicios.publicarEvento.ActionPublicarEvento"
+          scope="prototype" />
+    
+    <bean name="actionReestablecerPassword"
+          class="dpasoftware.acomersedijo.presentacion.servicios.reestablecerPassword.ActionReestablecerPassword"
+          scope="prototype" />
+
+    <bean name="actionRegistrarPago"
+          class="dpasoftware.acomersedijo.presentacion.servicios.administracion.registrarPago.ActionRegistrarPago"
+          scope="prototype" />
+
+    <bean name="actionRegistrarse"
+          class="dpasoftware.acomersedijo.presentacion.servicios.registrarse.ActionRegistrarse"
+          scope="prototype" />
+
+    <bean name="actionReportes"
+          class="dpasoftware.acomersedijo.presentacion.servicios.reportes.ActionReportes"
+          scope="prototype" />
+
+    <bean name="actionSeleccionarCiudad"
+          class="dpasoftware.acomersedijo.presentacion.servicios.seleccionarCiudad.ActionSeleccionarCiudad"
+          scope="prototype" />
+    
+</beans>

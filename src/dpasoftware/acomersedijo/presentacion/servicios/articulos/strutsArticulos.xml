@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="articulos" extends="default" namespace="/servicios/articulos">
+        
+        <action name="verArticulo" class="actionArticulos" method="verArticulo">
+            <result name="ok">/servicios/articulos/verArticulo.jsp</result>
+        </action>
+        
+        <action name="comentarArticulo" class="actionArticulos" method="comentarArticulo">
+            <result name="input">/servicios/articulos/verArticulo.jsp</result>
+        </action>
+        
+        <action name="verArticulos" class="actionArticulos" method="verArticulos">
+            <result name="ok">/servicios/articulos/verArticulos.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

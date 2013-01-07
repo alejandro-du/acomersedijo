@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <package name="registrarse" extends="default" namespace="/servicios/registrarse">
+        
+        <action name="inicio" class="actionRegistrarse" method="inicio">
+            <result name="ok">/servicios/registrarse/formularioRegistro1.jsp</result>
+        </action>
+        
+        <action name="informacionBasica" class="actionRegistrarse" method="informacionBasica">
+            <result name="input">/servicios/registrarse/formularioRegistro1.jsp</result>
+            <result name="ok">/servicios/registrarse/formularioRegistro2.jsp</result>
+        </action>
+        
+        <action name="registrarse" class="actionRegistrarse" method="registrarse">
+            <result name="input">/servicios/registrarse/formularioRegistro2.jsp</result>
+        </action>
+        
+        <action name="confirmarRegistro" class="actionRegistrarse" method="confirmarRegistro">
+            <result name="ok">/servicios/autenticacion/formularioAutenticacion.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>
