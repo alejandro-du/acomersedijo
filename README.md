@@ -1,7 +1,7 @@
 A comer se dijo!
 ================
 
-A web restaurant directory implemented in Java, with Spring Framework and Hibernate.
+A web restaurant directory implemented in Java, Spring Framework and Hibernate.
 
 A comer se dijo! is kind of a web portal (so to speak, don't take the term too serious) intended to allow companies
 (restaurants) anounce themself in a web directory. The web site offers plans with several advertising options
